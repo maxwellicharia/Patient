@@ -8,4 +8,5 @@ class Models:
 
     with con:
         cur = con.cursor()
-        cur.execute("CREATE TABLE Cars(Id INT, Name TEXT, Price INT)")
+        cur.execute("CREATE IF NOT EXISTS TABLE Patient(Id INT, Name TEXT, Price INT)")
+        cur.execute("INSERT INTO PATIENT(VALUES(?, ?)")

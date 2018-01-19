@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+import model
+
 from form import Form
 
 app = Flask(__name__)
@@ -14,5 +16,7 @@ def main():
 
     if request.method == 'GET':
         return render_template("interface.html", form=form)
+
+    form.name.data
 
 
