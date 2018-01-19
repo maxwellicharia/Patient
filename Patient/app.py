@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-import model
+import sqlite3 as lite
 
 from form import Form
 
@@ -17,6 +17,14 @@ def main():
     if request.method == 'GET':
         return render_template("interface.html", form=form)
 
-    form.name.data
+    con = lite.connect('patient.db')
+
+    with con:
+        cur = con.cursor()
+        id = form.id.data
+        name = form.name.data
+        age = form.age.data
+        cur.execute("INSERT INTO Patient(ID, Name, Age) VALUES(?, ?, ?)", id, name, age)
+        return render_template('success.html')
 
 

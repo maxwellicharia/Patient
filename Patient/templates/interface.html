@@ -8,13 +8,23 @@
             <!--<fieldset>-->
 
                   {{ form.hidden_tag() }}
-                  <div class="form-group">
-                        {% for message in form.name.errors %}
-                    <div class = "error">{{ message }}</div>
-                    {% endfor %}
+                    <div>
+                    <p>
+                    {{ form.id.label }}
+                  {{ form.id }}
+                    </p>
+                  </div>
                       <p>
-                  {{ form.name.label }}
+                  <div>
+                    <p>
+                    {{ form.name.label }}
                   {{ form.name }}
+                    </p>
+                  </div>
+                <div>
+                    <p>
+                    {{ form.age.label }}
+                  {{ form.age }}
                     </p>
                   </div>
                 <div class="submit">
